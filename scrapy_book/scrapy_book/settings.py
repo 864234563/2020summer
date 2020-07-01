@@ -9,10 +9,13 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
+
 BOT_NAME = 'scrapy_book'
 
 SPIDER_MODULES = ['scrapy_book.spiders']
 NEWSPIDER_MODULE = 'scrapy_book.spiders'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -21,6 +24,10 @@ NEWSPIDER_MODULE = 'scrapy_book.spiders'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
+
+ITEM_PIPELINES = {
+    'scrapy_book.pipelines.ScrapyBookPipeline': 300,
+}
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
